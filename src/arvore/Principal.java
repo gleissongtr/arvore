@@ -9,8 +9,23 @@ public class Principal {
 	public static void main(String[] args) {
 
 		List<Unidade> unidades = new ArrayList<>();
+		criarArvore(unidades);
 		
-		//CRIANDO ARVORE
+		//PERCORRENDO ARVORE
+		for (Unidade unidade : unidades) {
+			imprimirUnidade(unidade);
+		}
+
+	}
+
+	public static void imprimirUnidade(Unidade unidade) {
+		System.out.println(unidade.nome);
+		for (Unidade unidadeFilha : unidade.filhos) {
+			imprimirUnidade(unidadeFilha);
+		}
+	}
+	
+	private static void criarArvore(List<Unidade> unidades) {
 		unidades.add(
 				new Unidade("1", Arrays.asList(
 						new Unidade(" 1.1", Arrays.asList(
@@ -26,19 +41,6 @@ public class Principal {
 								new Unidade("  2.2.3", new ArrayList<>()))),
 						new Unidade(" 2.2", new ArrayList<>()),
 						new Unidade(" 2.3", new ArrayList<>()))));
-		
-		//PERCORRENDO ARVORE
-		for (Unidade unidade : unidades) {
-			imprimirUnidade(unidade);
-		}
-
-	}
-
-	public static void imprimirUnidade(Unidade unidade) {
-		System.out.println(unidade.nome);
-		for (Unidade unidadeFilha : unidade.filhos) {
-			imprimirUnidade(unidadeFilha);
-		}
 	}
 
 }
