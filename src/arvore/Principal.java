@@ -2,45 +2,45 @@ package arvore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Principal {
 
 	public static void main(String[] args) {
 
-		List<Unidade> unidades = new ArrayList<>();
-		criarArvore(unidades);
+		Unidade unidadePrincipal = criarArvore();
 		
 		//PERCORRENDO ARVORE
-		for (Unidade unidade : unidades) {
-			imprimirUnidade(unidade);
-		}
+		imprimirUnidade(unidadePrincipal);
 
 	}
 
 	public static void imprimirUnidade(Unidade unidade) {
-		System.out.println(unidade.nome);
-		for (Unidade unidadeFilha : unidade.filhos) {
+		System.out.println(unidade.getNome());
+		for (Unidade unidadeFilha : unidade.getFilhos()) {
 			imprimirUnidade(unidadeFilha);
 		}
 	}
 	
-	private static void criarArvore(List<Unidade> unidades) {
-		unidades.add(
-				new Unidade("1", Arrays.asList(
-						new Unidade(" 1.1", Arrays.asList(
-								new Unidade("  1.1.1", new ArrayList<>()),
-								new Unidade("  1.1.2", new ArrayList<>()),
-								new Unidade("  1.1.3", new ArrayList<>()))))));
-		
-		unidades.add(
-				new Unidade("2", Arrays.asList(
-						new Unidade(" 2.1", Arrays.asList(
-								new Unidade("  2.2.1", new ArrayList<>()),
-								new Unidade("  2.2.2", new ArrayList<>()),
-								new Unidade("  2.2.3", new ArrayList<>()))),
-						new Unidade(" 2.2", new ArrayList<>()),
-						new Unidade(" 2.3", new ArrayList<>()))));
+	private static Unidade criarArvore() {
+		return new Unidade(
+				"CD.UT", Arrays.asList(
+						new Unidade("1", Arrays.asList(
+								new Unidade("1.1", Arrays.asList(
+										new Unidade("1.1.1", new ArrayList<>()),
+										new Unidade("1.1.2", Arrays.asList(
+												new Unidade("1.1.2.1", new ArrayList<>()),
+												new Unidade("1.1.2.2", new ArrayList<>()),
+												new Unidade("1.1.2.3", new ArrayList<>()))),
+										new Unidade("1.1.3", new ArrayList<>()))))),
+						new Unidade("2", Arrays.asList(
+								new Unidade("2.1", Arrays.asList(
+										new Unidade("2.2.1", new ArrayList<>()),
+										new Unidade("2.2.2", new ArrayList<>()),
+										new Unidade("2.2.3", new ArrayList<>()))),
+								new Unidade("2.2", new ArrayList<>()),
+								new Unidade("2.3", new ArrayList<>()))),
+						new Unidade("3", new ArrayList<>())
+						));
 	}
 
 }

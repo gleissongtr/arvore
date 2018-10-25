@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Unidade {
-	String nome;
-	List<Unidade> filhos = new ArrayList<>();
+	private String nome;
+	private List<Unidade> filhos = new ArrayList<>();
 	
 	Unidade(String nome, List<Unidade> filhos){
 		this.nome = nome;
