@@ -10,7 +10,7 @@ public class Principal {
 		Unidade unidadePrincipal = criarArvore();
 		
 		//PERCORRENDO ARVORE
-		imprimirUnidade(unidadePrincipal,"-");
+		imprimirUnidade(unidadePrincipal,"");
 
 	}
 
