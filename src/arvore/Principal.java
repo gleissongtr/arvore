@@ -10,14 +10,14 @@ public class Principal {
 		Unidade unidadePrincipal = criarArvore();
 		
 		//PERCORRENDO ARVORE
-		imprimirUnidade(unidadePrincipal);
+		imprimirUnidade(unidadePrincipal,"-");
 
 	}
 
-	public static void imprimirUnidade(Unidade unidade) {
-		System.out.println(unidade.getNome());
+	public static void imprimirUnidade(Unidade unidade, String tracos) {
+		System.out.println(tracos + unidade.getNome());
 		for (Unidade unidadeFilha : unidade.getFilhos()) {
-			imprimirUnidade(unidadeFilha);
+			imprimirUnidade(unidadeFilha,tracos+"-");
 		}
 	}
 	
