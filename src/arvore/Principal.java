@@ -7,7 +7,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Unidade unidadePrincipal = criarArvore();
+		Unidade unidadePrincipal = criarArvoreMock();
 		
 		//PERCORRENDO ARVORE
 		imprimirUnidade(unidadePrincipal,"");
@@ -21,7 +21,7 @@ public class Principal {
 		}
 	}
 	
-	private static Unidade criarArvore() {
+	private static Unidade criarArvoreMock() {
 		return new Unidade(
 				"CD.UT", Arrays.asList(
 						new Unidade("1", Arrays.asList(
