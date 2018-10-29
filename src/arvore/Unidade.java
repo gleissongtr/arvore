@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Unidade {
 	private String nome;
+	//ManyToOne
+	private Unidade unidadePai;
+	
+	//OneToMany
 	private List<Unidade> filhos = new ArrayList<>();
 	
 	Unidade(String nome, List<Unidade> filhos){
@@ -23,5 +27,11 @@ public class Unidade {
 	}
 	public void setFilhos(List<Unidade> filhos) {
 		this.filhos = filhos;
+	}
+	public Unidade getUnidadePai() {
+		return unidadePai;
+	}
+	public void setUnidadePai(Unidade unidadePai) {
+		this.unidadePai = unidadePai;
 	}
 }
